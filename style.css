@@ -234,12 +234,11 @@ a   { color: inherit; text-decoration: none; }
 .gitem:nth-child(4n+3) { aspect-ratio: 3/2; }
 .gitem:nth-child(4n)   { aspect-ratio: 21/9; }
 
-.gitem img, .gitem .ph {
+.gitem img {
   width: 100%; height: 100%; object-fit: cover;
   transition: transform 1.4s var(--ease);
 }
-.gitem:hover img, .gitem:hover .ph { transform: scale(1.03); }
-.ph { object-fit: unset !important; }
+.gitem:hover img { transform: scale(1.03); }
 
 .gitem__cap {
   position: absolute; bottom: 0; left: 0; right: 0;
@@ -258,14 +257,6 @@ a   { color: inherit; text-decoration: none; }
   font-weight: 400;
 }
 
-.ph-1 { background: #d3ccc5; }
-.ph-2 { background: #c8c1ba; }
-.ph-3 { background: #dcd6cf; }
-.ph-4 { background: #cec7c0; }
-.ph-5 { background: #d8d1ca; }
-.ph-6 { background: #c3bcb5; }
-.ph-7 { background: #e0dad3; }
-.ph-8 { background: #cbc4bd; }
 
 @media (max-width: 767px) {
   .gallery__head { flex-direction: column; align-items: center; padding: 0 6vw 44px; }
@@ -581,11 +572,11 @@ a   { color: inherit; text-decoration: none; }
    FOOTER
 ═══════════════════════════════ */
 footer {
-  padding: 24px 6vw;
+  padding: 20px 6vw;
   background: var(--dark);
   display: flex;
-  justify-content: center;
   align-items: center;
+  gap: 20px;
 }
 .footer-copy {
   font-family: var(--serif);
@@ -599,10 +590,10 @@ footer {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   font-size: .8rem;
   color: #71717a;
-  width: 100%;
+  flex: 1;
 }
 .footer-legal {
   display: flex;
@@ -629,7 +620,7 @@ footer {
 }
 .footer-dev a {
   color: #ffffff;
-  font-weight: 700;
+  font-weight: 900;
   transition: color .2s;
 }
 .footer-dev a:hover { color: #fff; }
@@ -730,13 +721,28 @@ footer {
   .testi { text-align: center; padding: 28px 0; border: none; border-bottom: 1px solid var(--line); }
   .cf { grid-template-columns: 1fr; }
   .cf-footer { flex-direction: column; align-items: center; text-align: center; }
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 28px 6vw;
+    gap: 16px;
+  }
   .footer-bottom {
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: 10px;
+    width: 100%;
+  }
+  .footer-legal {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 14px;
+  }
+  .footer-dev {
+    position: static;
     text-align: center;
   }
-  .footer-legal { flex-direction: column; gap: 8px; }
-  .footer-dev { position: static; }
   .mob-br { display: inline; }
 }
